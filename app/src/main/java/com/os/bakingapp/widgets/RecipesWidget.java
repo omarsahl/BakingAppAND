@@ -11,6 +11,7 @@ import android.widget.RemoteViews;
 
 import com.google.gson.Gson;
 import com.looptech.bakingapp.R;
+import com.os.bakingapp.activities.MainActivity;
 import com.os.bakingapp.activities.RecipeDetailsActivity;
 import com.os.bakingapp.models.Recipe;
 import com.squareup.picasso.Picasso;
@@ -46,6 +47,17 @@ public class RecipesWidget extends AppWidgetProvider {
 
     private static RemoteViews getRecipeRemoteViews(Context context, Recipe recipe, int appWidgetId) {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.recipe_widget);
+
+        if (recipe == null) {
+            views.setTextViewText(R.id.widgetRecipeName, context.getString(R.string.no_recipes_widget));
+
+            Intent appIntent = new Intent(context, MainActivity.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, appIntent, 0);
+
+            views.setOnClickPendingIntent(R.id.widgetRecipeContainer, pendingIntent);
+
+            return views;
+        }
 
         views.setTextViewText(R.id.widgetRecipeName, recipe.recipeName);
 
