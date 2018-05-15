@@ -1,3 +1,5 @@
+![Image](screenshots/cover_pic-01.png)
+
 # Baking App
 The third project for the Udacity Android Developer Nanodegree.
 
