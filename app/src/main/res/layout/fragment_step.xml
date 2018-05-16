@@ -19,7 +19,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:resize_mode="fit"
         app:rewind_increment="2000"
-        android:background="@color/black" />
+        android:background="@color/colorPrimary" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/videoPlaceHolderImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/exoplayer_placeholder_artwork"
+        app:layout_constraintBottom_toBottomOf="@id/videoPlayerView"
+        app:layout_constraintEnd_toEndOf="@id/videoPlayerView"
+        app:layout_constraintStart_toStartOf="@id/videoPlayerView"
+        app:layout_constraintTop_toTopOf="@id/videoPlayerView"
+        android:background="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/descriptionLabel"

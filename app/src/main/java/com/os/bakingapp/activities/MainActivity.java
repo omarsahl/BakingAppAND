@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.looptech.bakingapp.R;
-import com.os.bakingapp.RecipesRepo;
+import com.os.bakingapp.repo.RecipesRepo;
 import com.os.bakingapp.adapters.RecipesAdapter;
 import com.os.bakingapp.models.Recipe;
 
